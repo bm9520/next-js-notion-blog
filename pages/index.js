@@ -47,9 +47,9 @@ export default function Home({ posts }) {
               </g>
             </svg>
           </div>
-          <h1>Next.js + Notion API ブログ</h1>
+          <h1>BM's PortFolio</h1>
           <p>
-           Notionと連携しているブログです。Notionに書き込めばそのままブログとして投稿できます。
+           Notion API+Next.js로 만든 포트폴리오 사이트입니다.
           </p>
         </header>
 
@@ -95,6 +95,6 @@ export const getStaticProps = async () => {
     props: {
       posts: database,
     },
-    revalidata: 1,
+  // revalidata : 1,
   }; 
 };

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getDatabase } from "../lib/notion";
 import { Text } from "./[id].js";
 import styles from "./index.module.css";
+import Image from "next/image"
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -64,8 +65,20 @@ export default function Home({ posts }) {
                 year: "numeric",
               }
             );
+            const created_date = new Date(post.created_time).toLocaleString(
+              "en-US",
+              {
+                month: "short",
+                day: "2-digit",
+                year: "numeric", 
+              }
+
+            );
             return (
               <li key={post.id} className={styles.post}>
+                <Image width="200vw" height="100vw"
+                 src ={post.cover.external.url}
+                />
                 <h3 className={styles.postTitle}>
                   <Link href={`/${post.id}`}>
                     <a>
@@ -73,8 +86,10 @@ export default function Home({ posts }) {
                     </a>
                   </Link>
                 </h3>
+                
 
-                <p className={styles.postDescription}>{date}</p>
+                <p className={styles.postDescription}>Updated: {date}</p>
+                <p className={styles.postDescription}>Created: {created_date}</p>
                 <Link href={`/${post.id}`}>
                   <a> Read post →</a>
                 </Link>

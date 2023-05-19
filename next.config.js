@@ -2,8 +2,6 @@
 module.exports = {
     images: {
       domains: ["www.notion.so"],
+      "presets": ["next/babel"]
     },
-  }
-module.exports = {
-    "presets": ["next/babel"]
   }

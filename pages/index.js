@@ -86,8 +86,7 @@ export default function Home({ posts }) {
                     </a>
                   </Link>
                 </h3>
-                
-
+                <h3></h3>
                 <p className={styles.postDescription}>Updated: {date}</p>
                 <p className={styles.postDescription}>Created: {created_date}</p>
                 <Link href={`/${post.id}`}>

@@ -4,3 +4,6 @@ module.exports = {
       domains: ["www.notion.so"],
     },
   }
+module.exports = {
+    "presets": ["next/babel"]
+  }
